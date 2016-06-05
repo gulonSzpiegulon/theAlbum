@@ -1,0 +1,15 @@
+<div id="background">
+	<div id="login-ui">
+		<div id="header"></div>
+		<div id="content">
+			<form id="form">
+				<input id="username" class="input" type="text" placeholder="User Name" autofocus
+					[(ngModel)]="user.username">
+				<input id="password" class="input" type="password" placeholder="Password"
+					[(ngModel)]="user.password">
+				<input id="login-btn" class="button" type="submit" value="LOGIN" (click)="login()">
+				<input id="register-btn" class="button" type="button" value="REGISTER" (click)="toRegister()">
+			</form>
+		</div>
+	</div>
+</div>

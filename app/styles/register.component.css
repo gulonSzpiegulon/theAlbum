@@ -1,0 +1,89 @@
+#background {
+	background: url('app/images/login-background-dubai.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	width:100%;
+	height:100%;
+	overflow:hidden; /*for not having scrollbars*/
+}
+
+#register-ui {
+	width: 423px;
+	height: 557px;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+#header {
+	width: 100%;
+	height: 134px;
+	background-color: rgb(27, 188, 155);
+	background-image: url('app/images/login-header.png');
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+#content {
+	width: 100%;
+	height: 280px;
+	background-color: rgb(255, 255, 255);
+}
+
+#form {
+	margin: 0 auto;
+	width: 329px;
+	padding-top: 53px;
+}
+
+.input {
+	width: 100%;
+	height: 37px;
+	display: block;
+	border: none;
+	color: rgb(167, 167, 167);
+	padding-left: 39px;
+}
+
+#username {
+	background: rgb(242, 242, 242) url('app/images/login-username-icon.png') no-repeat;
+}
+
+#password {
+	margin-top: 24px;
+	background: rgb(242, 242, 242) url('app/images/login-password-icon.png') no-repeat;
+}
+
+.button {
+	width: 50%;
+	height: 46px;
+	float: left;
+	border: none;
+	color: rgb(255, 255, 255);
+	font-size: 12px;
+	margin-top: 32px;
+	cursor: pointer;
+	outline: none;
+}
+
+#register-btn {
+	background-color: rgb(27, 188, 155);
+}
+
+#register-btn:hover {
+	background-color: rgb(17, 198, 162);
+}
+
+#login-btn {
+	background-color: rgb(59, 89, 151);
+}	
+
+#login-btn:hover {
+	background-color: rgb(49, 99, 158);
+}
+

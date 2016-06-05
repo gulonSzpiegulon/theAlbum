@@ -1,0 +1,19 @@
+<div id="background">
+	<div id="register-ui">
+		<div id="header"></div>
+		<div id="content">
+			<form id="form">
+				<input id="first-name" class="input" type="text" placeholder="First Name" autofocus
+					[(ngModel)]="user.firstName">
+				<input id="last-name" class="input" type="text" placeholder="Last Name"
+					[(ngModel)]="user.lastName">
+				<input id="e-mail" class="input" type="text" placeholder="E-mail"
+					[(ngModel)]="user.username">
+				<input id="password" class="input" type="password" placeholder="Password"
+					[(ngModel)]="user.password">
+				<input id="register-btn" class="button" type="submit" value="REGISTER" (click)="register()">
+				<input id="login-btn" class="button" type="button" value="LOGIN" (click)="toLogin()">
+			</form>
+		</div>
+	</div>
+</div>
