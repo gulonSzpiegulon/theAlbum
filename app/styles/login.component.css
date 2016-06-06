@@ -1,5 +1,5 @@
 #background {
-	background: url('app/images/login-background-dubai.jpg') no-repeat center center fixed;
+	background: url('app/images/login-and-register-background-dubai.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -11,7 +11,7 @@
 
 #login-ui {
 	width: 423px;
-	height: 557px;
+	height: 414px;
 	margin: auto;
 	position: absolute;
 	top: 0;
@@ -51,12 +51,12 @@
 }
 
 #username {
-	background: rgb(242, 242, 242) url('app/images/login-username-icon.png') no-repeat;
+	background: rgb(242, 242, 242) url('app/images/login-and-register-username-icon.png') no-repeat;
 }
 
 #password {
 	margin-top: 24px;
-	background: rgb(242, 242, 242) url('app/images/login-password-icon.png') no-repeat;
+	background: rgb(242, 242, 242) url('app/images/login-and-register-password-icon.png') no-repeat;
 }
 
 .button {

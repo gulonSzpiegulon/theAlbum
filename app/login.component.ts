@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
 	user: User  = new User();
 	users: User[];
 	errorMessage: string;
-	mode = 'Observable';	//a po choloere to tu??
 	
 	constructor(
 		private router: Router,

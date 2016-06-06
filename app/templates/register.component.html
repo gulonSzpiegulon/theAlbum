@@ -2,17 +2,28 @@
 	<div id="register-ui">
 		<div id="header"></div>
 		<div id="content">
-			<form id="form">
-				<input id="first-name" class="input" type="text" placeholder="First Name" autofocus
-					[(ngModel)]="user.firstName">
-				<input id="last-name" class="input" type="text" placeholder="Last Name"
-					[(ngModel)]="user.lastName">
-				<input id="e-mail" class="input" type="text" placeholder="E-mail"
-					[(ngModel)]="user.username">
-				<input id="password" class="input" type="password" placeholder="Password"
-					[(ngModel)]="user.password">
-				<input id="register-btn" class="button" type="submit" value="REGISTER" (click)="register()">
-				<input id="login-btn" class="button" type="button" value="LOGIN" (click)="toLogin()">
+			<form [ngFormModel]="myForm" (ngSubmit)="register(myForm.value)"
+				id="form">
+				
+				<input	[ngFormControl]="myForm.controls['firstName']" 
+					[class.firstNameError]="!firstName.valid && firstName.touched"
+					id="first-name" class="input" type="text" placeholder="First Name" autofocus>
+				
+				<input [ngFormControl]="myForm.controls['lastName']"
+					[class.lastNameError]="!lastName.valid && lastName.touched"
+					id="last-name" class="input" type="text" placeholder="Last Name">
+				
+				<input [ngFormControl]="myForm.controls['email']"
+					[class.emailError]="!email.valid && email.touched"
+					id="e-mail" class="input" type="text" placeholder="E-mail">
+				
+				<input [ngFormControl]="myForm.controls['password']"
+					[class.passwordError]="!password.valid && password.touched"
+					id="password" class="input" type="password" placeholder="Password">
+				
+				<button id="register-btn" class="button" type="submit">REGISTER</button>
+				<button id="login-btn" class="button" type="button" (click)="toLogin()">BACK TO LOGIN</button>
+			
 			</form>
 		</div>
 	</div>
