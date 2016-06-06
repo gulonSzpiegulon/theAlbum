@@ -1,24 +1,55 @@
 import { Component, OnInit }	from '@angular/core';
 import { Router }					from '@angular/router-deprecated';
-
+import { CORE_DIRECTIVES, FORM_DIRECTIVES, FormBuilder, ControlGroup, 
+	Validators, AbstractControl }		from '@angular/common';
+	
 import { User }				from './user';
 import { UserService }	from './user.service';
 
 @Component({
 	selector: 'my-login',
+	directives: [CORE_DIRECTIVES, FORM_DIRECTIVES],
 	templateUrl: 'app/templates/login.component.html',
 	styleUrls: ['app/styles/login.component.css']
 })
 
 export class LoginComponent implements OnInit {
-	user: User  = new User();
 	users: User[];
+	user: User;
 	errorMessage: string;
+	
+	myForm: ControlGroup;
+	username: AbstractControl;
+	password: AbstractControl;
 	
 	constructor(
 		private router: Router,
-		private userService: UserService
-	) {}
+		private userService: UserService,
+		fb: FormBuilder
+	) {
+		this.myForm = fb.group({
+			'username'	:	['', Validators.compose([Validators.required, this.usernameValidator])],
+			'password'	:	['', Validators.compose([Validators.required, this.passwordValidator])]
+		});
+		
+		this.username = this.myForm.controls['username'];
+		this.password = this.myForm.controls['password'];
+	}
+	
+	usernameValidator(control: AbstractControl): { [s: string]: boolean } {
+		if (!control.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+			return { invalidUsername: true };
+		} 
+	}
+	
+	passwordValidator(control: AbstractControl): { [s: string]: boolean } {
+		if (!control.value.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/)) {
+			//contains at least one digit, one lower case, one upper case and consist 
+			//of at least 8 of these characters
+			//this.passwordInvalid = true;
+			return { invalidPassword: true };
+		}
+	}
 	
 	ngOnInit() {
 		this.getUsers();
@@ -32,18 +63,25 @@ export class LoginComponent implements OnInit {
 	}
 	
 	login() {
+		if (!this.username.valid || !this.password.valid) {
+			return;	
+		}
+		
 		for(var i = 0; i < this.users.length; i++) {
-			if (this.user.username === this.users[i].username &&
-				this.user.password === this.users[i].password) {
+			
+			if (this.username.value === this.users[i].username &&
+				this.password.value === this.users[i].password) {
+					console.log("Loguje!!");
+					return;
 					//zaloguj
 					//czyli zapisz w sesji username i haslo
 					//oraz nawiguj do profile o podanym usernamie
 					//a po stronie tego profile username będzie trzeba sprawdzic 
 					//czy zapisane credantiale należą do ziomka na którego nawigowalismy
 					//jesli nie to powrot do logowania i wyczyszczenie credentaili
-				}
-			alert("Wrong e-mail or password!");
+			}
 		}
+		alert("Wrong e-mail or password!");
 	}
 	
 	toRegister() {

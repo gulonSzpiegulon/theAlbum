@@ -59,6 +59,14 @@
 	background: rgb(242, 242, 242) url('app/images/login-and-register-password-icon.png') no-repeat;
 }
 
+.usernameError {
+	background: rgb(254, 242, 242) url('app/images/login-and-register-username-error-icon.png') no-repeat !important;
+}
+
+.passwordError {
+	background: rgb(254, 242, 242) url('app/images/login-and-register-password-error-icon.png') no-repeat !important;
+}
+
 .button {
 	width: 50%;
 	height: 46px;

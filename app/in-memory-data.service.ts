@@ -1,20 +1,20 @@
 export class InMemoryDataService {
   createDb() {
     let users = [
-		{	username: 'j.gulkowski@wp.pl',	password: 'QWEqwe!@#123', 
+		{	username: 'j.gulkowski@wp.pl',	password: 'QWEqwe123', 
 			firstName: 'Jan',			lastName: 'Gulkowski'
 		},
-		{	username: 'w.gulkowski@wp.pl',	password: 'QWEqwe!@#231', 
+		{	username: 'w.gulkowski@wp.pl',	password: 'QWEqwe123', 
 			firstName: 'Wojciech',	lastName: 'Gulkowski'
 		},
-		{	username: 'k.gulkowski@wp.pl',	password: 'QWEqwe!@#312', 
-			firstName: 'Krzysztof',			lastName: 'Gulkowski'
+		{	username: 's.gulkowska@wp.pl',	password: 'QWEqwe123', 
+			firstName: 'Sylwia',			lastName: 'Gulkowska'
 		},
-		{	username: 'p.gulkowski@wp.pl',	password: 'QWEqwe!@#321', 
-			firstName: 'Paweł',			lastName: 'Gulkowski'
+		{	username: 'jsz.gulkowski@wp.pl',	password: 'QWEqwe123', 
+			firstName: 'Janusz',			lastName: 'Gulkowski'
 		},
-		{	username: 'm.gulkowska@wp.pl',	password: 'QWEqwe!@#321123', 
-			firstName: 'Maria',			lastName: 'Gulkowska'
+		{	username: 'janusz.sylwia@wp.pl',	password: 'QWEqwe123', 
+			firstName: 'Janusz',			lastName: 'Sylwia'
 		}
     ];
     return {users};
