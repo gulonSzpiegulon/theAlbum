@@ -83,6 +83,7 @@ export class RegisterComponent implements OnInit {
 		this.user = new User(this.firstName.value, this.lastName.value, 
 			this.email.value, this.password.value);
 		this.addUser(this.user);
+		this.router.navigate(['Profile', { username: this.email.value }]);
 	}
 	
 	addUser(user: User) {

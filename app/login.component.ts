@@ -72,13 +72,8 @@ export class LoginComponent implements OnInit {
 			if (this.username.value === this.users[i].username &&
 				this.password.value === this.users[i].password) {
 					console.log("Loguje!!");
+					this.router.navigate(['Profile', { username: this.username.value }]);
 					return;
-					//zaloguj
-					//czyli zapisz w sesji username i haslo
-					//oraz nawiguj do profile o podanym usernamie
-					//a po stronie tego profile username będzie trzeba sprawdzic 
-					//czy zapisane credantiale należą do ziomka na którego nawigowalismy
-					//jesli nie to powrot do logowania i wyczyszczenie credentaili
 			}
 		}
 		alert("Wrong e-mail or password!");
